@@ -2,6 +2,8 @@
 # datepicker
  a datepicker component
 
+ ![datepicker component](http://colinf.github.com/datepicker/images/example01.png)
+
 ##installation
 ```
 $ component install colinf/datecalc
