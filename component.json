@@ -1,0 +1,27 @@
+{
+  "name": "datepicker",
+  "repo": "colinf/datepicker",
+  "description": "a datepicker component",
+  "version": "0.0.1",
+  "keywords": ["datepicker", "calendar"],
+  "dependencies": {
+    "component/calendar": "*",
+    "component/each": "*",
+    "component/emitter": "*",
+    "component/jquery": "*",
+    "component/moment": "*",
+    "component/object": "*",
+    "component/popover": "*",
+    "component/type": "*"
+    },
+  "development": {
+    "component/aurora-calendar": "*"
+  },
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "datepicker.css"
+  ]
+}

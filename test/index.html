@@ -1,0 +1,56 @@
+<!DOCTYPE 5>
+<html>
+  <head>
+    <title>Datepicker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="../build/build.css" />
+    <style>
+      body {
+        padding: 50px;
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+      }
+      .wem2 {
+        width: 2em;
+      }
+      .wem4 {
+        width: 4em;
+      }
+      input {
+        box-sizing: content-box;
+      }
+    </style>
+  </head>
+  <body>
+    <title>Datepicker</title>
+    <script src="../build/build.js"></script>
+    <div>
+      <label>Date1:</label>
+      <input id="dt-dd" class="wem2" type="text" maxlength="2", placeholder="DD">/<input id="dt-mm" class="wem2" type="text" maxlength="2", placeholder="MM">/<input id="dt-yyyy" class="wem4" type="text" maxlength="4", placeholder="YYYY">
+      <a id="pickLink1" href="#">Pick</a>
+    </div>
+    <div>
+      <label>Date2:</label>
+      <input id="dt-ddmmyyyy" type="text" maxlength="11", placeholder="DD/MM/YYYY">
+      <a id="pickLink2" href="#">Pick</a>
+    </div>
+    <script>
+      var o = require('component-jquery');
+      var Datepicker = require('datepicker');
+
+      var datepicker = new Datepicker;
+      datepicker
+        .inputFields({
+          '#dt-dd': 'DD',
+          '#dt-mm': 'MM',
+          '#dt-yyyy': 'YYYY'})
+        .attach('#dt-dd')
+        .click('#pickLink1');
+
+      var datepicker2 = new Datepicker("Pick Date 2");
+      datepicker2
+        .click('#pickLink2')
+        .inputFields({'#dt-ddmmyyyy': 'D MMM YYYY'});
+
+    </script>
+  </body>
+</html>
