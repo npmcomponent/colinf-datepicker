@@ -16,7 +16,7 @@ module.exports = Datepicker;
  * Initialize a `Datepicker` with the given optional `date`
  * and optional `title`.
  */
- 
+
 function Datepicker(date, title) {
   this.datepicker = o(require('./template'));
   if (type(date) == "string") {

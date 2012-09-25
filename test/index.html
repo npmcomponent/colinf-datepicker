@@ -43,12 +43,13 @@
           '#dt-dd': 'DD',
           '#dt-mm': 'MM',
           '#dt-yyyy': 'YYYY'})
-        .attach('#dt-dd')
         .click('#pickLink1');
 
       var datepicker2 = new Datepicker("Pick Date 2");
       datepicker2
+        .click('#dt-ddmmyyyy')
         .click('#pickLink2')
+        .attach('#dt-ddmmyyyy')
         .inputFields({'#dt-ddmmyyyy': 'D MMM YYYY'});
 
     </script>
