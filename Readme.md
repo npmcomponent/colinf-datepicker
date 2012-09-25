@@ -11,7 +11,7 @@ You can find out more about using and installing components [here](https://githu
 (A Makefile is also provided if you want to install the datepicker for dev/test)
 
 ##Based on Popover / Tip
-Datepicker is based on the Popover and Tip component. It therefore also provides the same features as those components.
+Datepicker is based on the Popover and Tip components. It therefore also provides the same features as those components.
 
 ## Example
 
@@ -64,3 +64,5 @@ The date formats supported are defined [at this link](http://momentjs.com/docs/#
 
 ### Datepicker#click(el)
 Chainable. Defines an element which when clicked will cause the datepicker to show.
+
+Also see the API documentation for [component/popover](https://github.com/component/popover) and [component/tip](https://github.com/component/tip).
