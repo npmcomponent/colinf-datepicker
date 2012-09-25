@@ -8,7 +8,7 @@ $ component install colinf/datecalc
 ```
 You can find out more about using and installing components [here](https://github.com/component/component).
 
-(A Makefile is also provided if you want to install the datepicker for dev/test)
+(A Makefile is provided if you want to install the datepicker for dev/test)
 
 ##Based on Popover / Tip
 Datepicker is based on the Popover and Tip components. It therefore also provides the same features as those components.
@@ -34,7 +34,7 @@ datepicker
 ### new Datepicker(date)
 ### new Datepicker(title)
 ### new Datepicker(date, title)
-Creates a new datepicker for the given date and title. Both the date and title arguments are optional. If their is no date argument, the datepicker defaults to today’s date. If there is a title argument, then the datepicker is displayed with a title (see Popover for further details).
+Creates a new datepicker for the given date and title. Both the date and title arguments are optional. If there is no date argument, the datepicker defaults to today’s date. If there is a title argument, then the datepicker is displayed with a title (see Popover for further details).
 
 ### Datepicker#attach(el)
 Chainable. Defines the element to which the datepicker should be attached. If not defined, the datepicker will attach to the element defined in click().
@@ -48,7 +48,7 @@ Chainable. The fields argument defines the input field or fields used for enteri
 So to define a single input field:
 ```js
 datepicker.inputFields({
-	‘#the-date’: ‘DD/MM/YYYY’
+	'#the-date': 'DD/MM/YYYY'
 });
 ```
 
