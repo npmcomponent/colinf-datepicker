@@ -1,5 +1,4 @@
 var o = require('jquery');
-var object = require('object');
 var each = require('each');
 var moment = require('moment');
 var type = require('type');
@@ -24,22 +23,30 @@ function Datepicker(date, title) {
     date = new Date();
   }
   date = date || new Date();
+  this.triggers = [];
   this.cal = new Calendar(date);
   this.datepicker.find('.datepicker-calendar').append(this.cal.el);
   Popover.call(this, this.datepicker, title);
   var self = this;
+  // Add close button
+  o('<div class="datepicker-close"><a href="#">&#10006;</a></div>')
+    .prependTo(this.el.find('.tip-inner'))
+    .click(function() {
+      self.hideAndUnbind();
+    });
   this.classname = 'popover datepicker';
   this.cal.on('change', function(date){
     self.dateChanged(date);
+    if (self.originalFocus) o(self.originalFocus).focus();
   });
-  this.datepicker.blur(function() {
-    self.hide();
-  })
-  o(document).mouseup(function (e) {
-    if (self.datepicker.has(e.target).length === 0)
-    {
-        self.hide();
-    }
+  this.on('show', function() {
+    o(document).mousedown(self.mousedownHandler = function(e) {
+      if (self.el.has(e.target).length === 0) {
+        self.hideAndUnbind();
+      } else {
+        self.inDatepicker = true;
+      }
+    });
   });
 }
 
@@ -70,7 +77,7 @@ Datepicker.prototype.select = function(date) {
 Datepicker.prototype.dateChanged = function(date) {
   this.date = date;
   this.updateFields();
-  this.hide();
+  this.hideAndUnbind();
   this.emit('change', date);  
 }
 
@@ -102,13 +109,33 @@ Datepicker.prototype.inputFields = function(inputFields) {
   return self;
 }
 
-Datepicker.prototype.click = function(selector) {
+Datepicker.prototype.trigger = function(selector) {
   var self = this;
+  this.triggers.push(selector);
 
-
-  o(selector).click(function() {
-    self.show(self.attachTo || selector);
-  })
+  if (acceptsFocus(selector)) {
+    o(selector).focus(function() {
+      if (selector != self.originalFocus) {
+        self.originalFocus = selector;
+        self.show(self.attachTo || selector);
+      } else {
+        self.originalFocus = null;
+      }
+    });
+    o(selector).blur(function() {
+      if (self.inDatepicker) {
+        self.inDatepicker = false;
+      } else {
+        self.originalFocus = null;
+        self.hideAndUnbind();        
+      }
+    });
+  } else {
+    o(selector).click(function() {
+      self.originalFocus = null;
+      self.show(self.attachTo || selector);
+    })
+  }
   return self;
 }
 
@@ -120,3 +147,25 @@ Datepicker.prototype.updateFields = function() {
     o(selector).val(moment(self.date).format(format));    
   });
 }
+
+Datepicker.prototype.hideAndUnbind = function() {
+  this.hide();
+  var self = this;
+  if (this.mousedownHandler) {
+    o(document).unbind('mousedown', self.mousedownHandler);
+    self.mousedownHandler = null;
+  }
+  self.inDatepicker = false;
+}
+
+var acceptsFocus = function(selector) {
+  var el = o(selector);
+  if (el.is('input:text') ||
+      el.is('input:password') ||
+      el.is('select') ||
+      el.is('textarea')) {
+    return true;
+  }
+  return false;
+}
+

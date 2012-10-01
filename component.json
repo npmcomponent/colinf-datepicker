@@ -10,7 +10,6 @@
     "component/emitter": "*",
     "component/jquery": "*",
     "component/moment": "*",
-    "component/object": "*",
     "component/popover": "*",
     "component/type": "*"
     },

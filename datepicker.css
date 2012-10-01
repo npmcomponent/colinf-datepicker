@@ -26,3 +26,35 @@
 .popover-content {
   padding: 0;
 }
+
+.tip-inner .datepicker-close {
+/*  position: absolute;
+  top: -1px;
+  right: -1px;
+  background-color: #e0e0e0;
+  height: 18px;
+  width: 18px;
+*/}
+
+.tip-inner .datepicker-close a {
+/*  color: #595959;
+  font-size: 12px;
+  text-decoration: none;
+  vertical-align: middle;
+*/
+  position: absolute;
+  right: 0px; top: 0px; width:20px;
+  background-color: #FFF; color: #595959;
+  margin-top:-10px; margin-right:-10px; border-radius: 20px;
+  padding-left: 3px; padding-top: 1px;
+  cursor:pointer; z-index: -1;
+  font-size:16px;
+  text-decoration: none;
+}
+
+
+.tip-inner .datepicker-close a:hover {
+  color: black;
+  font-weight: bold;
+}
+

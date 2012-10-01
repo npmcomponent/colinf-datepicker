@@ -39,7 +39,9 @@ datepicker
 Creates a new datepicker for the given date and title. Both the date and title arguments are optional. If there is no date argument, the datepicker defaults to today’s date. If there is a title argument, then the datepicker is displayed with a title (see Popover for further details).
 
 ### Datepicker#attach(el)
-Chainable. Defines the element to which the datepicker should be attached. If not defined, the datepicker will attach to the element defined in click().
+Chainable. Defines the element to which the datepicker should be attached i.e. the Tip arrow will originate from this element.
+
+If you do not specifically define an element using attach, then the datepicker will attach to the element defined in trigger(). So if the el in attach(el) and trigger(el) are the same it's easiest to just use trigger().
 
 ### Datepicker#select(date)
 Selects the given date.
@@ -64,7 +66,7 @@ datepicker.inputFields({
 ```
 The date formats supported are defined [at this link](http://momentjs.com/docs/#/parsing/string-format/).
 
-### Datepicker#click(el)
+### Datepicker#trigger(el)
 Chainable. Defines an element which when clicked will cause the datepicker to show.
 
 Also see the API documentation for [component/popover](https://github.com/component/popover) and [component/tip](https://github.com/component/tip).
