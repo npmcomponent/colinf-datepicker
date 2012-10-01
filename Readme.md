@@ -27,8 +27,8 @@ datepicker
     '#dt-mm': 'MM',
     '#dt-yyyy': 'YYYY'})
   .attach('#dt-dd')
-  .click('#pickLink1');
-```    
+  .trigger('#pickLink1');
+```
 
 ## API
 
