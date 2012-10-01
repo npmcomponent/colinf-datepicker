@@ -36,8 +36,10 @@ function Datepicker(date, title) {
     });
   this.classname = 'popover datepicker';
   this.cal.on('change', function(date){
+    if (self.originalFocus) {
+      o(self.originalFocus).focus();
+    }
     self.dateChanged(date);
-    if (self.originalFocus) o(self.originalFocus).focus();
   });
   this.on('show', function() {
     o(document).mousedown(self.mousedownHandler = function(e) {
@@ -126,7 +128,6 @@ Datepicker.prototype.trigger = function(selector) {
       if (self.inDatepicker) {
         self.inDatepicker = false;
       } else {
-        self.originalFocus = null;
         self.hideAndUnbind();        
       }
     });
@@ -156,6 +157,7 @@ Datepicker.prototype.hideAndUnbind = function() {
     self.mousedownHandler = null;
   }
   self.inDatepicker = false;
+  self.originalFocus = null;
 }
 
 var acceptsFocus = function(selector) {
