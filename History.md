@@ -8,3 +8,4 @@
   * refactoring of initial version
   * replaced Datepicker#click with Datepicker#trigger
   * improved mouse handler
+  * added close button
