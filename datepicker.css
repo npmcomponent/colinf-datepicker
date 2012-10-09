@@ -1,28 +1,22 @@
+.tip-inner {
+  max-width: none;
+}
+.popover-content {
+  padding: 0;
+}
 .datepicker .datepicker-content {
   padding: 0;
 }
-
 .datepicker-calendar {
   padding: 0;
 }
-
 .calendar {
   width: 100%;
   overflow: auto;
 }
-
-.calendar th {
-  font-size: 10px;
-}
 .calendar td a {
-  font-size: 10px;
   padding: 3px;
 }
-
-.popover-content {
-  padding: 0;
-}
-
 .tip-inner .datepicker-close a {
   position: absolute;
   right: 0px; top: 0px; width:20px;
@@ -30,13 +24,10 @@
   margin-top:-10px; margin-right:-10px; border-radius: 20px;
   padding-left: 3px; padding-top: 1px;
   cursor:pointer; z-index: -1;
-  font-size:16px;
+  font-size: 1.3em;
   text-decoration: none;
 }
-
-
 .tip-inner .datepicker-close a:hover {
   color: black;
   font-weight: bold;
 }
-
