@@ -39,6 +39,7 @@ function Datepicker(date, title, options) {
       break;
   };
   this.options = this.options || {};
+  if (this.options.displayInitial) this._date = date;
   this.triggers = [];
   this.cal = new Calendar(date);
   this.datepicker.find('.datepicker-calendar').append(this.cal.el);
