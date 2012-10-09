@@ -2,7 +2,7 @@
   "name": "datepicker",
   "repo": "colinf/datepicker",
   "description": "a datepicker component",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": ["datepicker", "calendar"],
   "dependencies": {
     "component/calendar": "*",
