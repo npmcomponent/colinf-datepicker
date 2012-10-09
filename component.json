@@ -14,7 +14,7 @@
     "component/type": "*"
     },
   "development": {
-    "component/aurora-calendar": "*"
+    "colinf/darktone-calendar": "*"
   },
   "scripts": [
     "index.js",
