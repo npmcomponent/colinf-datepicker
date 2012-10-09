@@ -34,9 +34,21 @@ datepicker
 
 ### new Datepicker()
 ### new Datepicker(date)
-### new Datepicker(title)
 ### new Datepicker(date, title)
-Creates a new datepicker for the given date and title. Both the date and title arguments are optional. If there is no date argument, the datepicker defaults to today’s date. If there is a title argument, then the datepicker is displayed with a title (see Popover for further details).
+### new Datepicker(date, title, options)
+### new Datepicker(date, options)
+### new Datepicker(title)
+### new Datepicker(title, options)
+### new Datepicker(options)
+Creates a new datepicker for the given date and title. All of the arguments are optional.
+
+If used the date argument must be a Javascript Date object. If there is no date argument, the datepicker defaults to today’s date.
+
+If used the title should be a string. If there is a title argument, then the datepicker is displayed with a title (see Popover for further details).
+
+The options argument is optional. When passed it must be an object and can contains the following keys:
+
+* displayInitial: boolean indicating whether the input fields should be populated with the initial date value.
 
 ### Datepicker#attach(el)
 Chainable. Defines the element to which the datepicker should be attached i.e. the Tip arrow will originate from this element.

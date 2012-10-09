@@ -16,13 +16,29 @@ module.exports = Datepicker;
  * and optional `title`.
  */
 
-function Datepicker(date, title) {
+function Datepicker(date, title, options) {
   this.datepicker = o(require('./template'));
-  if (type(date) == "string") {
-    title = date;
-    date = new Date();
-  }
   date = date || new Date();
+  switch(type(date)) {
+    case "string":
+      title = date;
+      date = new Date();
+      this.options = title || {};
+      break;
+    case "object":
+      this.options = date;
+      date = new Date();
+      break;
+    case "date":
+      if (title) {
+        if (type(title) == "object") {
+          this.options = title;
+          title = null;        
+        }
+      }
+      break;
+  };
+  this.option = this.options || {};
   this.triggers = [];
   this.cal = new Calendar(date);
   this.datepicker.find('.datepicker-calendar').append(this.cal.el);
@@ -60,7 +76,7 @@ Datepicker.prototype.__proto__ = Popover.prototype;
 
 
 Datepicker.prototype.date = function() {
-  return this.date;
+  return this._date;
 }
 
 Datepicker.prototype.attach = function(el) {
@@ -71,13 +87,13 @@ Datepicker.prototype.attach = function(el) {
 Datepicker.prototype.select = function(date) {
   date = date || new Date();
   if (type(date) == 'date') {
-    this.date = date;
+    this._date = date;
     this.cal.select(date);
   }
 }
 
 Datepicker.prototype.dateChanged = function(date) {
-  this.date = date;
+  this._date = date;
   this.updateFields();
   this.hideAndUnbind();
   this.emit('change', date);  
@@ -102,6 +118,9 @@ Datepicker.prototype.inputFieldChanged = function() {
 Datepicker.prototype.inputFields = function(inputFields) {
   var self = this;
   self.inputFields = inputFields;
+  if (this.options.displayInitial) {
+    self.updateFields();
+  };
   each(self.inputFields, function(selector, format) {
     o(selector).change(function() {
       self.inputFieldChanged();
@@ -145,7 +164,7 @@ Datepicker.prototype.updateFields = function() {
   var self = this;
 
   each(self.inputFields, function(selector, format) {
-    o(selector).val(moment(self.date).format(format));    
+    o(selector).val(moment(self.date()).format(format));    
   });
 }
 
