@@ -2,7 +2,7 @@
 # datepicker
  a datepicker component
 
- ![datepicker component](http://colinf.github.com/datepicker/images/example01.png)
+ ![datepicker component](http://f.cl.ly/items/3e340Z1U0W2Y2o2i0R23/Screen%20Shot%202012-10-09%20at%2021.37.53.png)
 
 ##installation
 ```
