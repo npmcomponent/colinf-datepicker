@@ -100,7 +100,7 @@ Datepicker.prototype.dateChanged = function(date) {
   this.emit('change', date);  
 }
 
-Datepicker.prototype.inputFieldChanged = function() {
+Datepicker.prototype.inputMoment = function() {
   var self = this;
   var fullFormat = '';
   var fullVal = '';
@@ -111,8 +111,22 @@ Datepicker.prototype.inputFieldChanged = function() {
     fullVal += o(selector).val();
   });
   if (fullVal && fullFormat) {
-    var parsedMoment = moment(fullVal, fullFormat);
-    self.select(parsedMoment.toDate());
+    return moment(fullVal, fullFormat);
+  } else {
+    return false;
+  }
+}
+
+Datepicker.prototype.inputValid = function() {
+  var parsedMoment = this.inputMoment();
+  if (parsedMoment) return parsedMoment.isValid();
+  return false;
+}
+
+Datepicker.prototype.inputFieldChanged = function() {
+  var parsedMoment = this.inputMoment();
+  if (parsedMoment) {
+    this.select(parsedMoment.toDate());
   }
 }
 

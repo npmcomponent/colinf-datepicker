@@ -6,7 +6,7 @@
 
 ##installation
 ```
-$ component install colinf/datecalc
+$ component install colinf/datepicker
 ```
 You can find out more about using and installing components [here](https://github.com/component/component).
 
@@ -80,5 +80,13 @@ The date formats supported are defined [at this link](http://momentjs.com/docs/#
 
 ### Datepicker#trigger(el)
 Chainable. Defines an element which when clicked will cause the datepicker to show.
+
+### Datepicker#date()
+Returns the current date selected in the datepicker as a Javascript Date object.
+
+### Datepicker#inputValid()
+Returns a boolean indicating whether the date which has been entered is a valid date.
+
+The Datepicker#date() method is very flexible and will return a date by overflowing when possible. So an invalid entry such as 33/10/2012 (dd/mm/yyyy format) overflows and returns 02/11/2012. However the inputValid() method will return false to allow validation if desired.
 
 Also see the API documentation for [component/popover](https://github.com/component/popover) and [component/tip](https://github.com/component/tip).
