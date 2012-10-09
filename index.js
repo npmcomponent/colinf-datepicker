@@ -38,7 +38,7 @@ function Datepicker(date, title, options) {
       }
       break;
   };
-  this.option = this.options || {};
+  this.options = this.options || {};
   this.triggers = [];
   this.cal = new Calendar(date);
   this.datepicker.find('.datepicker-calendar').append(this.cal.el);
