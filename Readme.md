@@ -32,14 +32,7 @@ datepicker
 
 ## API
 
-### new Datepicker()
-### new Datepicker(date)
-### new Datepicker(date, title)
-### new Datepicker(date, title, options)
-### new Datepicker(date, options)
-### new Datepicker(title)
-### new Datepicker(title, options)
-### new Datepicker(options)
+### new Datepicker([date], [title], [options])
 Creates a new datepicker for the given date and title. All of the arguments are optional.
 
 If used the date argument must be a Javascript Date object. If there is no date argument, the datepicker defaults to today’s date.
@@ -80,6 +73,18 @@ The date formats supported are defined [at this link](http://momentjs.com/docs/#
 
 ### Datepicker#trigger(el)
 Chainable. Defines an element which when clicked will cause the datepicker to show.
+
+### Datepicker#monthMenu()
+Chainable. Displays a dropdown menu of months in the header of the datepicker for quick navigation.
+
+### Datepicker#yearMenu([from], [to])
+Chainable. Displays a dropdown menu of months in the header of the datepicker for quick navigation.
+
+`From` specifies the first year shown in the dropdown and `to` the last year. This means that if `to` is less than `from`, the years will be listed in descending order.
+
+If `from`/`to` are both not specified the dropdown defaults to -/+ 10 years from the calendar's date.
+
+If only `from` specified it defaults `to` +20 years from that year.
 
 ### Datepicker#date()
 Returns the current date selected in the datepicker as a Javascript Date object.

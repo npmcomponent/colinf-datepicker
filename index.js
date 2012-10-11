@@ -93,6 +93,33 @@ Datepicker.prototype.select = function(date) {
   }
 }
 
+/**
+ * Enable a year dropdown.
+ *
+ * @param {from} Number
+ * @param {to} Number
+ * @return {Datepicker}
+ * @api public
+ */
+
+Datepicker.prototype.yearMenu = function(from, to){
+  this.cal.yearMenu(from, to);
+  return this;
+};
+
+/**
+ * Enable a month dropdown.
+ *
+ * @return {Datepicker}
+ * @api public
+ */
+
+Datepicker.prototype.monthMenu = function(){
+  this.cal.monthMenu();
+  return this;
+};
+
+
 Datepicker.prototype.dateChanged = function(date) {
   this._date = date;
   this.updateFields();

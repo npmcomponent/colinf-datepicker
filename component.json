@@ -5,7 +5,7 @@
   "version": "0.0.3",
   "keywords": ["datepicker", "calendar"],
   "dependencies": {
-    "component/calendar": "*",
+    "colinf/calendar": "selectMonthYear",
     "component/each": "*",
     "component/emitter": "*",
     "component/jquery": "*",
