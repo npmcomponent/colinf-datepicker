@@ -14,7 +14,7 @@
     "component/type": "*"
     },
   "development": {
-    "colinf/darktone-calendar": "*"
+    "colinf/darktone": "*"
   },
   "scripts": [
     "index.js",
