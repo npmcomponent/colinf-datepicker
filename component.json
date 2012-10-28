@@ -3,7 +3,10 @@
   "repo": "colinf/datepicker",
   "description": "a datepicker component",
   "version": "0.0.3",
-  "keywords": ["datepicker", "calendar"],
+  "keywords": [
+    "datepicker",
+    "calendar"
+  ],
   "dependencies": {
     "colinf/calendar": "selectMonthYear",
     "component/each": "*",
@@ -12,7 +15,7 @@
     "component/moment": "*",
     "component/popover": "*",
     "component/type": "*"
-    },
+  },
   "development": {
     "colinf/darktone-calendar": "*"
   },
@@ -22,5 +25,6 @@
   ],
   "styles": [
     "datepicker.css"
-  ]
+  ],
+  "license": "MIT"
 }
