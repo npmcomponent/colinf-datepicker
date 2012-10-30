@@ -103,7 +103,7 @@ Datepicker.prototype.select = function(date) {
  */
 
 Datepicker.prototype.yearMenu = function(from, to){
-  this.cal.yearMenu(from, to);
+  this.cal.showYearSelect(from, to);
   return this;
 };
 
@@ -115,7 +115,7 @@ Datepicker.prototype.yearMenu = function(from, to){
  */
 
 Datepicker.prototype.monthMenu = function(){
-  this.cal.monthMenu();
+  this.cal.showMonthSelect();
   return this;
 };
 
