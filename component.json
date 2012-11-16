@@ -8,9 +8,8 @@
     "calendar"
   ],
   "dependencies": {
-    "component/calendar": "*",
+    "colinf/calendar": "cf",
     "component/each": "*",
-    "component/emitter": "*",
     "component/jquery": "*",
     "component/moment": "*",
     "component/popover": "*",
