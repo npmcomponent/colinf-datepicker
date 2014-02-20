@@ -1,0 +1,21 @@
+{
+  "name": "colinf-datepicker",
+  "description": "a datepicker component",
+  "version": "0.0.3",
+  "keywords": [
+    "datepicker",
+    "calendar"
+  ],
+  "styles": [
+    "datepicker.css"
+  ],
+  "dependencies": {
+    "colinf-calendar": "git://github.com/npmcomponent/colinf-calendar.git",
+    "component-each": "git://github.com/npmcomponent/component-each.git",
+    "component-jquery": "git://github.com/npmcomponent/component-jquery.git",
+    "component-moment": "git://github.com/npmcomponent/component-moment.git",
+    "component-popover": "git://github.com/npmcomponent/component-popover.git",
+    "component-type": "git://github.com/npmcomponent/component-type.git"
+  },
+  "license": "MIT"
+}

@@ -1,9 +1,9 @@
-var o = require('jquery');
-var each = require('each');
-var moment = require('moment');
-var type = require('type');
-var Popover = require('popover');
-var Calendar = require('calendar');
+var o = require('component-jquery');
+var each = require('component-each');
+var moment = require('component-moment');
+var type = require('component-type');
+var Popover = require('component-popover');
+var Calendar = require('colinf-calendar');
 
 /**
  * Expose `ConfirmationPopover`.
